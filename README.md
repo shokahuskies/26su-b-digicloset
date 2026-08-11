@@ -68,3 +68,15 @@ If you do want to explore it:
 1. Review the `api/backend/ml_models` module. **Important**: you would never want to hard code the model parameter weights directly in the prediction function — store them in the database, as `model01.py` does.
 1. The prediction route for the REST API is in `api/backend/simple/simple_routes.py`. It accepts two URL parameters and passes them to the `predict` function in the `ml_models` module, then packages the result back to Streamlit as JSON.
 1. Back in Streamlit, check out `app/src/pages/11_Prediction.py`. Two numeric input fields are created; when the button is pressed, it makes a request to the REST API at `/prediction/{var_01}/{var_02}` and displays the results.
+
+
+
+1. copy .env.template and type in ur password and secret key 
+2. have a file with the DDL (this should be fine since i alr did it)
+3. start containers (make sure docker is alr running) and run the command in the terminal!: 
+
+   docker compose up -d
+
+   docker compose down -v (this is when you run after you face into an error)
+
+4. for the frontend page: type in localhost:8501
