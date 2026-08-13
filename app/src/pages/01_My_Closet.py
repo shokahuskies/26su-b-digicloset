@@ -49,7 +49,6 @@ with st.form("add_clothing_form"):
             "brand": new_brand,
             "type": new_type,
             "image": None,
-            "user_id": user_id,
         }
         try:
             response = requests.post(f"{API_URL}/clothing", json=payload)

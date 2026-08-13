@@ -65,7 +65,6 @@ with st.form("create_outfit_form"):
                         "outfit_id": int(new_outfit_id),
                         "season": season,
                         "occasion": occasion,
-                        "user_id": user_id,
                         "clothing_ids": clothing_ids,
                     },
                 )
