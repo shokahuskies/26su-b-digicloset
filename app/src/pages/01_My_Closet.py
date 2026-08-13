@@ -26,7 +26,7 @@ except requests.exceptions.RequestException as e:
 
 if clothing:
     st.dataframe(
-        [{k: v for k, v in item.items() if k != "image"} for item in clothing],
+        [{k: v for k, v in item.items() if k not in ("image", "user_id")} for item in clothing],
         use_container_width=True,
     )
 else:
@@ -49,6 +49,7 @@ with st.form("add_clothing_form"):
             "brand": new_brand,
             "type": new_type,
             "image": None,
+            "user_id": user_id,
         }
         try:
             response = requests.post(f"{API_URL}/clothing", json=payload)
