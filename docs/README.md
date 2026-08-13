@@ -1,5 +1,9 @@
 # Project Documentation
 
+DigiCloset is a digital wardrobe app that helps users catalogue their clothing, build outfits from what they already own, and get recommendations on wearing existing pieces instead of buying new ones. The project also includes an admin view for managing user accounts and tracking/resolving reported issues, and a client-facing view for browsing and purchasing user data packs.
+
+**Team:** Amy Shok ([@shokahuskies](https://github.com/shokahuskies)) · Alan Chau ([@achau2511](https://github.com/achau2511)) · Grace Shang ([@gs-shang](https://github.com/gs-shang))
+
 | Document                           | Description                                                                                                           |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | [Prerequisites](PreReq.md)         | Python environment setup (Anaconda/Miniconda or standard virtual environments), required tools, and IDE configuration |

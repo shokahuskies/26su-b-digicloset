@@ -1,8 +1,12 @@
-# Summer B 2026 CS 3200 Project Template
+# DigiCloset
 
-This is a template repo for Dr. Fontenot's Summer B 2026 CS 3200 Course Project.
+DigiCloset is a digital wardrobe app that helps users catalogue their clothing, build outfits from what they already own, and get recommendations on wearing existing pieces instead of buying new ones. The project also includes an admin view for managing user accounts and tracking/resolving reported issues, and a client-facing view for browsing and purchasing user data packs.
 
-It includes most of the infrastructure setup (containers), sample databases, and example UI pages. Explore it fully and ask questions!
+**Team:** Amy Shok ([@shokahuskies](https://github.com/shokahuskies)) · Alan Chau ([@achau2511](https://github.com/achau2511)) · Grace Shang ([@gs-shang](https://github.com/gs-shang))
+
+**Demo video:** _link coming soon_
+
+This repo is built on top of the CS 3200 course project template, which provides the infrastructure setup (containers), and example UI pages.
 
 ## Prerequisites
 
@@ -50,33 +54,3 @@ See [docs/RBAC.md](docs/RBAC.md) for a full explanation of how the RBAC system w
 The app's colors, fonts, and sidebar styling all come from `app/src/.streamlit/config.toml` — there is no CSS to edit. Save the file and the running app picks the change up; refresh the browser tab if you don't see it.
 
 See [docs/Theming.md](docs/Theming.md) for what each setting does and how to build your own palette.
-
-## (Completely Optional) Incorporating ML Models into your Project
-
-**This is entirely optional. No part of the project requires a machine learning model, and you are not expected to build one.** The template simply happens to include the plumbing for a hypothetical model, described below, in case your team is curious and has spare time. Skipping this section costs you nothing.
-
-The model shipped in `api/backend/ml_models/model01.py` is a *fake* placeholder — it reads coefficients out of the `model1_params` table and computes a dot product. It is there to show the wiring, not to make real predictions.
-
-If you do want to explore it:
-
-1. Collect and preprocess necessary datasets for your models.
-1. Build, train, and test your model in a Jupyter Notebook.
-   - You can store your datasets in the `datasets` folder and your notebook in the `ml-src` folder.
-1. Once your team is happy with the model's performance, convert your notebook code to a pure Python script.
-   - You can include the `training` and `testing` functionality as well as the `prediction` functionality.
-   - Develop and test this pure Python script first in the `ml-src` folder.
-1. Review the `api/backend/ml_models` module. **Important**: you would never want to hard code the model parameter weights directly in the prediction function — store them in the database, as `model01.py` does.
-1. The prediction route for the REST API is in `api/backend/simple/simple_routes.py`. It accepts two URL parameters and passes them to the `predict` function in the `ml_models` module, then packages the result back to Streamlit as JSON.
-1. Back in Streamlit, check out `app/src/pages/11_Prediction.py`. Two numeric input fields are created; when the button is pressed, it makes a request to the REST API at `/prediction/{var_01}/{var_02}` and displays the results.
-
-
-
-1. copy .env.template and type in ur password and secret key 
-2. have a file with the DDL (this should be fine since i alr did it)
-3. start containers (make sure docker is alr running) and run the command in the terminal!: 
-
-   docker compose up -d
-
-   docker compose down -v (this is when you run after you face into an error)
-
-4. for the frontend page: type in localhost:8501
