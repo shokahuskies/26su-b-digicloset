@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS General_User (
     lastName text
 );
 
-INSERT INTO General_User
+INSERT INTO General_User --alan
 VALUES (1, 'k4ngaroo', 'Emily', 'Kang'),
        (2, 'mimi', 'Maria', 'Santiago'),
        (3, 'gWalton', 'George', 'Walton');
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS Client (
     package_level int
 );
 
-INSERT INTO Client
+INSERT INTO Client --alan
 VALUES (1, 'Marcy`s', 1),
        (2, 'Opera', 1),
        (3, 'CData Co.', 2);
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS Clothing (
                                     ON DELETE SET NULL
 );
 
-INSERT INTO Clothing
+INSERT INTO Clothing --grace
 VALUES (1, 'striped t-shirt', 'Never32',
         'T SHIRT', LOAD_FILE('/'), 1),
        (2, 'buttoned pants', 'BrundyNashville',
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS Outfits (
                                    ON DELETE SET NULL
 );
 
-INSERT INTO Outfits
+INSERT INTO Outfits --grace
 VALUES (1, 'SUMMER', '2026-08-11',
         'CASUAL', '2026-08-12', 1,
         1, 1, 1),
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS Pieces (
                                   ON DELETE CASCADE
 );
 
-INSERT INTO Pieces
+INSERT INTO Pieces --grace
 VALUES (1,1),
        (1, 21),
        (2, 21);
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS Closet (
                                   ON DELETE SET NULL
 );
 
-INSERT INTO Closet
+INSERT INTO Closet --alan
 VALUES (1, 1, 1, 1),
        (2, 1, NULL, 2),
        (3, 1, NULL, 3);
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS User_Data_Pack (
     price decimal(9,2)
 );
 
-INSERT INTO User_Data_Pack
+INSERT INTO User_Data_Pack --grace
 VALUES (1, 'NUM OUTFITS INFO', 1, 1000.55),
        (2, 'NUM CLOTHES', 1, 50000.37);
 
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS User_Profile (
                                         ON DELETE SET NULL
 );
 
-INSERT INTO User_Profile (join_date, num_clothing, num_outfits, user_id)
+INSERT INTO User_Profile (join_date, num_clothing, num_outfits, user_id) --alan
 VALUES ('2024-01-01', 3,
         2, 1),
         ('2024-12-1', 0,
@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS Data_Receipt (
                                         ON DELETE CASCADE
 );
 
-INSERT INTO Data_Receipt
+INSERT INTO Data_Receipt --alan
 VALUES (1, 1),
        (1,2);
 
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS Issue (
                                  ON DELETE CASCADE
 );
 
-INSERT INTO Issue
+INSERT INTO Issue --grace
 VALUES (193, 'ACCOUNT', 'my account email wont update',
         0, 1, NULL),
         (310, 'APP', 'the app wont load for me',
