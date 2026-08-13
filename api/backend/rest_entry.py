@@ -4,9 +4,10 @@ import os
 import logging
 
 from backend.db_connection import init_app as init_db
-from backend.simple.simple_routes import simple_routes
-from backend.ngos.ngo_routes import ngos
-from backend.ngos.closet_routes import closet
+from backend.closets.closet_routes import closet
+from backend.outfits.outfits_routes import outfits
+from backend.admin.admin_routes import admin
+from backend.clients.client_routes import clients
 
 
 def create_app():
@@ -36,8 +37,9 @@ def create_app():
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each.
     app.logger.info("create_app(): registering blueprints")
-    app.register_blueprint(simple_routes)
-    app.register_blueprint(ngos, url_prefix="/ngo")
     app.register_blueprint(closet, url_prefix="/closet")
+    app.register_blueprint(outfits, url_prefix="/outfits")
+    app.register_blueprint(admin, url_prefix="/admin")
+    app.register_blueprint(clients, url_prefix="/clients")
 
     return app

@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 # import the main streamlit library as well
 # as SideBarLinks function from src/modules folder
 import streamlit as st
-from modules.nav import SideBarLinks
+from modules.closet_nav import SideBarLinks
 
 # streamlit supports regular and wide layout (how the controls
 # are organized/displayed on the screen).
@@ -40,33 +40,37 @@ st.write('#### Hi! As which user would you like to log in?')
 # functionality, we put a button on the screen that the user
 # can click to MIMIC logging in as that mock user.
 
-if st.button("Act as John, a Political Strategy Advisor",
+if st.button("Act as Emily Kang, a DigiCloset user",
              type='primary',
              use_container_width=True):
     # when user clicks the button, they are now considered authenticated
     st.session_state['authenticated'] = True
     # we set the role of the current user
-    st.session_state['role'] = 'pol_strat_advisor'
+    st.session_state['role'] = 'user'
     # we add the first name of the user (so it can be displayed on
-    # subsequent pages).
-    st.session_state['first_name'] = 'John'
+    # subsequent pages), plus their user_id for API calls.
+    st.session_state['first_name'] = 'Emily'
+    st.session_state['user_id'] = 1
     # finally, we ask streamlit to switch to another page, in this case, the
     # landing page for this particular user type
-    logger.info("Logging in as Political Strategy Advisor Persona")
-    st.switch_page('pages/00_Pol_Strat_Home.py')
+    logger.info("Logging in as User Persona")
+    st.switch_page('pages/00_User_Home.py')
 
-if st.button('Act as Mohammad, a USAID Worker',
-             type='primary',
-             use_container_width=True):
-    st.session_state['authenticated'] = True
-    st.session_state['role'] = 'usaid_worker'
-    st.session_state['first_name'] = 'Mohammad'
-    st.switch_page('pages/10_USAID_Worker_Home.py')
-
-if st.button('Act as System Administrator',
+if st.button('Act as Adam, the System Administrator',
              type='primary',
              use_container_width=True):
     st.session_state['authenticated'] = True
     st.session_state['role'] = 'administrator'
-    st.session_state['first_name'] = 'SysAdmin'
-    st.switch_page('pages/20_Admin_Home.py')
+    st.session_state['first_name'] = 'Adam'
+    logger.info("Logging in as Administrator Persona")
+    st.switch_page('pages/10_Admin_Home.py')
+
+if st.button("Act as Joellé Fash, a data-purchasing Client",
+             type='primary',
+             use_container_width=True):
+    st.session_state['authenticated'] = True
+    st.session_state['role'] = 'client'
+    st.session_state['first_name'] = 'Joellé'
+    st.session_state['client_id'] = 1
+    logger.info("Logging in as Client Persona")
+    st.switch_page('pages/20_Client_Home.py')
